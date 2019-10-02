@@ -10,7 +10,6 @@ android {
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -22,6 +21,38 @@ android {
             keyPassword "test1234"
         }
     }
+
+    flavorDimensions "client", "server"
+    productFlavors {
+        final appVersionName = "1.0"
+        freeFlavor {
+            dimension "client"
+            applicationId 'example.com.byjusapp.free'
+            versionName "${appVersionName}-free"
+        }
+        paidFlavour {
+            dimension "client"
+            applicationId 'example.com.byjusapp.paid'
+            versionName "${appVersionName}-paid"
+        }
+        production {
+            dimension "server"
+            applicationId 'example.com.byjusapp.prodution'
+            versionName "${appVersionName}-production"
+        }
+        staging {
+            dimension "server"
+            applicationId 'example.com.byjusapp.staging'
+            versionName "${appVersionName}-staging"
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "${variant.name}-${variant.versionName}.apk"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -34,14 +65,7 @@ android {
             signingConfig signingConfigs.debug
         }
 
-        productFlavors{
-            prod{
 
-            }
-            staging{
-
-            }
-        }
     }
 }
 

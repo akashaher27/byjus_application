@@ -7,6 +7,11 @@ import example.com.byjusapp.domain.news.NewsInteractor
 /**
  * Created by Akash on 2019-09-28.
  */
-class NewsViewModel(application: Application, newsInteractor: NewsInteractor) : AndroidViewModel(application) {
+class NewsViewModel(application: Application, newsInteractor: NewsInteractor) :
+    AndroidViewModel(application) {
+
+    fun getBitCoinArticle() {
+
+    }
 
 }

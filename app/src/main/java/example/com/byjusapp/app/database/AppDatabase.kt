@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import example.com.byjusapp.app.NewsArticleDao
 import example.com.byjusapp.app.common.SingletonHolder
 
 /**
@@ -17,5 +18,9 @@ abstract class AppDatabase() : RoomDatabase() {
 
     companion object : SingletonHolder<AppDatabase, Context>({
         Room.databaseBuilder(it, AppDatabase::class.java, "AppDataBase").build()
-    }){}
+    }) {}
+
+
+    //Dao
+    abstract fun bitCoinArticleDao(): NewsArticleDao
 }

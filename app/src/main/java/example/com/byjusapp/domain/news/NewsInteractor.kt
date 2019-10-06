@@ -6,10 +6,10 @@ import example.com.byjusapp.data.news.repository.NewsRepository
 /**
  * Created by Akash on 2019-09-28.
  */
-class NewsInteractor(newsRepository: NewsRepository) {
+class NewsInteractor(val newsRepository: NewsRepository) {
 
-    fun getArticlesFromLocal(): List<Article>? {
-        return null;
+    fun getBitCoinArticlesFromLocalStorage(): List<Article>? {
+        return newsRepository.getBitCoinArticlesFromLocalStorage();
     }
 
 }

@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import example.com.byjusapp.data.news.model.Article
 import example.com.byjusapp.data.news.model.Source
 
 /**
@@ -24,4 +25,5 @@ data class ArticleEntity(
     val urlToImage: String,
     val publishedAt: String,
     val content: String
-) {}
+) {
+}

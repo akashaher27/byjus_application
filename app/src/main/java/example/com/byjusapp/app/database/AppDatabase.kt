@@ -6,6 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import example.com.byjusapp.app.NewsArticleDao
 import example.com.byjusapp.app.common.SingletonHolder
+import example.com.byjusapp.app.database.news.ArticleEntity
 
 /**
  * Created by Akash on 2019-09-22.
@@ -13,7 +14,7 @@ import example.com.byjusapp.app.common.SingletonHolder
  * Local storage (Room)
  */
 
-@Database(entities = arrayOf(), version = 1)
+@Database(entities = arrayOf(ArticleEntity::class), version = 1)
 abstract class AppDatabase() : RoomDatabase() {
 
     companion object : SingletonHolder<AppDatabase, Context>({
@@ -22,5 +23,5 @@ abstract class AppDatabase() : RoomDatabase() {
 
 
     //Dao
-    abstract fun bitCoinArticleDao(): NewsArticleDao
+    abstract fun newsArticleDao(): NewsArticleDao
 }
